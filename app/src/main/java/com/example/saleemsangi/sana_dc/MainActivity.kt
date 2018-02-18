@@ -62,8 +62,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
             R.id.nav_hotel -> {
-
                 Hotel()
+            }
+
+            R.id.nav_sana -> {
+                SANAFragment()
             }
 
             else -> {
