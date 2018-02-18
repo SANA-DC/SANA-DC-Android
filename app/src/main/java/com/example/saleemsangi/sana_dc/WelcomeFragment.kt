@@ -5,6 +5,12 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.fragment_welcome.*
+import android.text.method.ScrollingMovementMethod
+
+
 
 /**
  * Created by saleemsangi on 2/17/18.
@@ -13,8 +19,16 @@ import android.view.ViewGroup
 
 class WelcomeFragment : Fragment(){
 
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        textViewMessage.setMovementMethod(ScrollingMovementMethod())
+
+    }
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
 
         return inflater?.inflate(R.layout.fragment_welcome, null)
     }
+
 }

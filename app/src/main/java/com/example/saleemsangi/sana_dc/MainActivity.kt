@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         supportFragmentManager.beginTransaction()
-                .replace(R.id.relativeLayout,fragment)
+                .replace(R.id.screenLayout,fragment)
                 .commit()
 
 
