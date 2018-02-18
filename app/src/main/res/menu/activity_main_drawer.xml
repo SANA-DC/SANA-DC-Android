@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+        <item
+            android:id="@+id/nav_welcome"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Welcome" />
+        <item
+            android:id="@+id/nav_hotel"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Hotel" />
+        <item
+            android:id="@+id/nav_sana"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="SANA" />
+        <item
+            android:id="@+id/nav_transportation"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Transportation" />
+        <item
+            android:id="@+id/nav_attractions"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Attractions" />
+        <item
+            android:id="@+id/nav_agenda"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Agenda" />
+        <item
+            android:id="@+id/nav_contactSANA"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Contact SANA" />
+        <item
+            android:id="@+id/nav_aboutme"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="About ME" />
+
+
+
+</menu>
