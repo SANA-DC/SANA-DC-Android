@@ -1,5 +1,6 @@
 package com.example.saleemsangi.sana_dc
 
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.text.method.ScrollingMovementMethod
@@ -10,6 +11,7 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import kotlinx.android.synthetic.main.fragment_hotel.*
+import kotlinx.android.synthetic.main.fragment_sana.*
 import kotlinx.android.synthetic.main.fragment_welcome.*
 
 /**
@@ -28,15 +30,27 @@ class Hotel: Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
 
-        webView.settings.javaScriptEnabled = true
-        webView.webViewClient = object : WebViewClient(){
+        webViewHotel.settings.javaScriptEnabled = true
+        webViewHotel.webViewClient = object : WebViewClient(){
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
                 view?.loadUrl(request?.url.toString())
                 return true
             }
+
+            override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                super.onPageStarted(view, url, favicon)
+                view?.visibility = View.INVISIBLE
+                progressBarHotel.visibility = View.VISIBLE
+            }
+
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+                view?.visibility  = View.VISIBLE
+                progressBarHotel.visibility = View.INVISIBLE
+            }
         }
 
-        webView.loadUrl("https://aws.passkey.com/e/49513241")
+        webViewHotel.loadUrl("https://aws.passkey.com/e/49513241")
 
     }
 }

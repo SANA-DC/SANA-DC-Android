@@ -1,5 +1,7 @@
 package com.example.saleemsangi.sana_dc
 
+import android.graphics.Bitmap
+import android.opengl.Visibility
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +11,7 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import kotlinx.android.synthetic.main.fragment_hotel.*
+import kotlinx.android.synthetic.main.fragment_sana.*
 
 /**
  * Created by saleemsangi on 2/17/18.
@@ -24,16 +27,28 @@ class SANAFragment : Fragment(){
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
-        webView.settings.javaScriptEnabled = true
-        webView.webViewClient = object : WebViewClient(){
+
+        webViewSana.settings.javaScriptEnabled = true
+        webViewSana.webViewClient = object : WebViewClient(){
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
                 view?.loadUrl(request?.url.toString())
                 return true
             }
+
+            override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                super.onPageStarted(view, url, favicon)
+                view?.visibility = View.INVISIBLE
+                progresBarSANA.visibility = View.VISIBLE
+            }
+
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+                view?.visibility  = View.VISIBLE
+                progresBarSANA.visibility = View.INVISIBLE
+            }
         }
 
-        webView.loadUrl("https://sanaonline.org/product/convention-registration-adult-member/")
+        webViewSana.loadUrl("https://sanaonline.org/product/convention-registration-adult-member/")
 
     }
 }
