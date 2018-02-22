@@ -69,6 +69,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 SANAFragment()
             }
 
+            R.id.nav_attractions -> {
+                AttractionsFragment()
+            }
             else -> {
                 WelcomeFragment()
             }
