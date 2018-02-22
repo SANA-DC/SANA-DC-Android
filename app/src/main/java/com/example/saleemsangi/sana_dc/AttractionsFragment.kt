@@ -5,16 +5,17 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.ArrayAdapter
-import android.widget.BaseAdapter
-import android.widget.ListView
-import android.widget.TextView
+import android.widget.*
 import kotlinx.android.synthetic.main.fragment_attractions.*
+import android.widget.Toast
+
+
 
 /**
  * Created by saleemsangi on 2/17/18.
@@ -24,7 +25,7 @@ import kotlinx.android.synthetic.main.fragment_attractions.*
 class AttractionsFragment : Fragment(){
 
 
-    private var adapter : attractionsAdaptor?=null
+    private var adapter : AttractionsAdaptor?=null
     private var attractionsList = arrayListOf(
             "United States Holocaust Memorial Museum",
             "Strathmore",
@@ -46,14 +47,24 @@ class AttractionsFragment : Fragment(){
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-       adapter = attractionsAdaptor(
+
+
+        adapter = AttractionsAdaptor(
                context,
                attractionsList
        )
         attractionsListView.adapter = adapter
+
+        val test : ListView = view!!.findViewById(R.id.attractionsListView)
+        test.onItemClickListener =  AdapterView.OnItemClickListener { _, _, position, _ ->
+            Toast.makeText(context, "hello " + position, Toast.LENGTH_LONG).show()
+            print(position)
+        }
+
+
     }
 
-    inner class attractionsAdaptor: BaseAdapter {
+    inner class AttractionsAdaptor: BaseAdapter {
         private var  listOfAttractions = ArrayList<String>()
         private var context:Context?=null
         constructor(context:Context, listOfAttractions: ArrayList<String>):super(){
@@ -84,5 +95,7 @@ class AttractionsFragment : Fragment(){
             return  attractionsList.size
         }
 
+
     }
+
 }
