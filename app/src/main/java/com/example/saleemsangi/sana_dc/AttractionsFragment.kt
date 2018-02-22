@@ -24,8 +24,8 @@ import kotlinx.android.synthetic.main.fragment_attractions.*
 class AttractionsFragment : Fragment(){
 
 
-    var adapter : attractionsAdaptor?=null
-    var attractionsList = arrayListOf(
+    private var adapter : attractionsAdaptor?=null
+    private var attractionsList = arrayListOf(
             "United States Holocaust Memorial Museum",
             "Strathmore",
             "Washington Monument",
@@ -50,26 +50,18 @@ class AttractionsFragment : Fragment(){
                context,
                attractionsList
        )
-
-
         attractionsListView.adapter = adapter
-
-
     }
 
     inner class attractionsAdaptor: BaseAdapter {
-        var  listOfAttractions = ArrayList<String>()
-        var context:Context?=null
+        private var  listOfAttractions = ArrayList<String>()
+        private var context:Context?=null
         constructor(context:Context, listOfAttractions: ArrayList<String>):super(){
             this.listOfAttractions=listOfAttractions
             this.context=context
         }
 
         override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-//            val textView = TextView(context)
-//            textView.text = attractionsList[p0]
-//
-//            return textView
 
             val layoutInflator = LayoutInflater.from(context)
             val row = layoutInflator.inflate(R.layout.attraction_row, p2, false)
