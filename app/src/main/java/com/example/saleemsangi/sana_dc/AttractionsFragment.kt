@@ -1,6 +1,7 @@
 package com.example.saleemsangi.sana_dc
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -48,7 +49,6 @@ class AttractionsFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
 
-
         adapter = AttractionsAdaptor(
                context,
                attractionsList
@@ -57,8 +57,21 @@ class AttractionsFragment : Fragment(){
 
         val test : ListView = view!!.findViewById(R.id.attractionsListView)
         test.onItemClickListener =  AdapterView.OnItemClickListener { _, _, position, _ ->
-            Toast.makeText(context, "hello " + position, Toast.LENGTH_LONG).show()
+           // Toast.makeText(context, "hello " + position, Toast.LENGTH_LONG).show()
             print(position)
+
+
+            val detailFragment = AttractionsDetailFragment()
+            val transaction = fragmentManager.beginTransaction()
+            transaction.replace(R.id.screenLayout, detailFragment).addToBackStack(null)
+            transaction.commit()
+
+//           val intent = Intent(context, AttractionDetailActivity::class.java)
+//            intent.putExtra("sa", "ss")
+//            startActivity(intent)
+
+            activity.setTitle("test")
+
         }
 
 
