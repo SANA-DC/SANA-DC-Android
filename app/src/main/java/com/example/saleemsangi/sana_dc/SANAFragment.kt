@@ -28,7 +28,10 @@ class SANAFragment : Fragment(){
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        webViewSana.settings.javaScriptEnabled = true
+        if (webViewSana != null){
+            webViewSana.settings.javaScriptEnabled = true
+        }
+        
         webViewSana.webViewClient = object : WebViewClient(){
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
                 view?.loadUrl(request?.url.toString())
@@ -38,13 +41,17 @@ class SANAFragment : Fragment(){
             override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
                 super.onPageStarted(view, url, favicon)
                 view?.visibility = View.INVISIBLE
-                progresBarSANA.visibility = View.VISIBLE
+                if (progresBarSANA != null){
+                    progresBarSANA.visibility = View.VISIBLE
+                }
             }
 
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
                 view?.visibility  = View.VISIBLE
-                progresBarSANA.visibility = View.INVISIBLE
+                if (progresBarSANA != null) {
+                    progresBarSANA.visibility = View.INVISIBLE
+                }
             }
         }
 

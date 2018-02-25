@@ -30,27 +30,36 @@ class Hotel: Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
 
-        webViewHotel.settings.javaScriptEnabled = true
-        webViewHotel.webViewClient = object : WebViewClient(){
-            override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
-                view?.loadUrl(request?.url.toString())
-                return true
+        if (webViewHotel != null) {
+            webViewHotel.settings.javaScriptEnabled = true
+            webViewHotel.webViewClient = object : WebViewClient(){
+                override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+                    view?.loadUrl(request?.url.toString())
+                    return true
+                }
+
+                override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                    super.onPageStarted(view, url, favicon)
+                    view?.visibility = View.INVISIBLE
+                    if (progressBarHotel != null){
+                        progressBarHotel.visibility = View.VISIBLE
+
+                    }
+                }
+
+                override fun onPageFinished(view: WebView?, url: String?) {
+                    super.onPageFinished(view, url)
+                    view?.visibility  = View.VISIBLE
+                    if (progressBarHotel != null) {
+                        progressBarHotel.visibility = View.INVISIBLE
+
+                    }
+                }
             }
 
-            override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
-                super.onPageStarted(view, url, favicon)
-                view?.visibility = View.INVISIBLE
-                progressBarHotel.visibility = View.VISIBLE
-            }
-
-            override fun onPageFinished(view: WebView?, url: String?) {
-                super.onPageFinished(view, url)
-                view?.visibility  = View.VISIBLE
-                progressBarHotel.visibility = View.INVISIBLE
-            }
+            webViewHotel.loadUrl("https://aws.passkey.com/e/49513241")
         }
 
-        webViewHotel.loadUrl("https://aws.passkey.com/e/49513241")
 
     }
 }

@@ -30,7 +30,10 @@ class AttractionsDetailFragment : Fragment(){
 
         activity.setTitle("erer")
 
-        webViewAttractionDetail.settings.javaScriptEnabled = true
+        if (webViewAttractionDetail != null){
+            webViewAttractionDetail.settings.javaScriptEnabled = true
+
+        }
         webViewAttractionDetail.webViewClient = object : WebViewClient(){
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
                 view?.loadUrl(request?.url.toString())
@@ -40,13 +43,19 @@ class AttractionsDetailFragment : Fragment(){
             override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
                 super.onPageStarted(view, url, favicon)
                 view?.visibility = View.INVISIBLE
-                progressBarAttractionDetail.visibility = View.VISIBLE
+                if (progressBarAttractionDetail != null) {
+                    progressBarAttractionDetail.visibility = View.VISIBLE
+
+                }
             }
 
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
                 view?.visibility  = View.VISIBLE
-                progressBarAttractionDetail.visibility = View.INVISIBLE
+                if (progressBarAttractionDetail != null){
+                    progressBarAttractionDetail.visibility = View.INVISIBLE
+
+                }
             }
         }
 

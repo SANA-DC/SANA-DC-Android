@@ -88,7 +88,7 @@ class AttractionsFragment : Fragment(){
         override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
 
             val layoutInflator = LayoutInflater.from(context)
-            val row = layoutInflator.inflate(R.layout.attraction_row, p2, false)
+            val row = layoutInflator.inflate(R.layout.attraction_row, p2, false) //TODO: Crashes here
             val titleTextView = row.findViewById<TextView>(R.id.titleTextView)
             titleTextView.text = attractionsList[p0]
             return row
