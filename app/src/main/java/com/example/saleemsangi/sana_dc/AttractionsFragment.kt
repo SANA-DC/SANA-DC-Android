@@ -13,6 +13,7 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.*
+import android.widget.AdapterView.OnItemClickListener
 import kotlinx.android.synthetic.main.fragment_attractions.*
 import android.widget.Toast
 
@@ -49,6 +50,8 @@ class AttractionsFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
 
+        activity.title = "Attractions"
+
         adapter = AttractionsAdaptor(
                context,
                attractionsList
@@ -56,12 +59,23 @@ class AttractionsFragment : Fragment(){
         attractionsListView.adapter = adapter
 
         val test : ListView = view!!.findViewById(R.id.attractionsListView)
-        test.onItemClickListener =  AdapterView.OnItemClickListener { _, _, position, _ ->
+        test.onItemClickListener =  OnItemClickListener { _, _, position, _ ->
            // Toast.makeText(context, "hello " + position, Toast.LENGTH_LONG).show()
             print(position)
 
 
             val detailFragment = AttractionsDetailFragment()
+            val args = Bundle()
+            args.putInt(
+                    "selectedRow",
+                    position
+            )
+            args.putString("title", attractionsList[position])
+
+            detailFragment.arguments = args
+
+
+
             val transaction = fragmentManager.beginTransaction()
             transaction.replace(R.id.screenLayout, detailFragment).addToBackStack(null)
             transaction.commit()
@@ -70,7 +84,6 @@ class AttractionsFragment : Fragment(){
 //            intent.putExtra("sa", "ss")
 //            startActivity(intent)
 
-            activity.setTitle("test")
 
         }
 

@@ -28,10 +28,12 @@ class SANAFragment : Fragment(){
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        activity.title = "SANA"
+
         if (webViewSana != null){
             webViewSana.settings.javaScriptEnabled = true
         }
-        
+
         webViewSana.webViewClient = object : WebViewClient(){
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
                 view?.loadUrl(request?.url.toString())

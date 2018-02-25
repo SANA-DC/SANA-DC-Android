@@ -30,6 +30,8 @@ class Hotel: Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
 
+        activity.title = "Hotel"
+
         if (webViewHotel != null) {
             webViewHotel.settings.javaScriptEnabled = true
             webViewHotel.webViewClient = object : WebViewClient(){

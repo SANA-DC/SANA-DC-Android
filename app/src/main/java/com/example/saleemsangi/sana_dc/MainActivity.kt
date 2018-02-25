@@ -79,6 +79,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         supportFragmentManager.beginTransaction()
                 .replace(R.id.screenLayout,fragment)
+                //.addToBackStack(null)
                 .commit()
 
 

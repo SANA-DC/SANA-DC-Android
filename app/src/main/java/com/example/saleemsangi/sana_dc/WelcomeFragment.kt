@@ -27,6 +27,7 @@ class WelcomeFragment : Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
+        activity.title = "Welcome"
 
         return inflater?.inflate(R.layout.fragment_welcome, null)
     }

@@ -17,7 +17,22 @@ import kotlinx.android.synthetic.main.fragment_attractions_detail.*
  */
 
 
+
+
+
 class AttractionsDetailFragment : Fragment(){
+
+    private var attractionsListURLS = arrayListOf(
+            "https://www.ushmm.org/",
+            "https://www.strathmore.org/",
+            "https://www.nps.gov/wamo/index.htm",
+            "https://www.nps.gov/vive/index.htm",
+            "https://airandspace.si.edu/",
+            "http://ldschurchtemples.org/washington/",
+            "http://www.kennedy-center.org/",
+            "https://www.si.edu/",
+            "https://nationalzoo.si.edu/"
+    )
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -28,7 +43,8 @@ class AttractionsDetailFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
 
-        activity.setTitle("erer")
+
+        activity.title = arguments.getString("title")
 
         if (webViewAttractionDetail != null){
             webViewAttractionDetail.settings.javaScriptEnabled = true
@@ -59,7 +75,10 @@ class AttractionsDetailFragment : Fragment(){
             }
         }
 
-        webViewAttractionDetail.loadUrl("https://aws.passkey.com/e/49513241")
+        val selectedIndex = arguments.getInt("selectedRow")
+        val loadingURL = attractionsListURLS[selectedIndex]
+
+        webViewAttractionDetail.loadUrl(loadingURL)
 
     }
 }

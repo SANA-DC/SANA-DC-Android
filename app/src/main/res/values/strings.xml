@@ -9,5 +9,16 @@
     <string name="hotel">Hotel</string>
     <string name="title_activity_attraction_detail">AttractionDetailActivity</string>
 
+    <string name="strathmoreURL"> https://www.strathmore.org/ </string>
+    <string name="vietnamURL"> https://www.nps.gov/vive/index.htm </string>
+    <string name="monumentURL"> https://www.nps.gov/wamo/index.htm </string>
+    <string name="airandspaceURL"> https://airandspace.si.edu/ </string>
+    <string name="templeURL"> http://ldschurchtemples.org/washington/ </string>
+    <string name="kennedyURL"> http://www.kennedy-center.org/ </string>
+    <string name="smithsonianURL"> https://www.si.edu/ </string>
+    <string name="holocaustURL"> https://www.ushmm.org/ </string>
+    <string name="whiteHouseURL"> https://www.whitehouse.gov/ </string>
+    <string name="nationalZooURL"> https://nationalzoo.si.edu/ </string>
+
 
 </resources>
