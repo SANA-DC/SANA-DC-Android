@@ -72,6 +72,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_attractions -> {
                 AttractionsFragment()
             }
+            R.id.nav_transportation -> {
+                TransportFragment()
+            }
             else -> {
                 WelcomeFragment()
             }
