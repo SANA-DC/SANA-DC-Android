@@ -27,7 +27,7 @@ class TransportFragment : Fragment(){
             "Baltimore/Washington International Thurgood Marshall Airport - BWI",
             "Parking",
             "Bus Station",
-            "Subway Station",
+            "Metro Station",
             "Train Station",
             "Car Rentals"
     )
@@ -55,22 +55,25 @@ class TransportFragment : Fragment(){
            // Toast.makeText(context, "hello " + position, Toast.LENGTH_LONG).show()
             print(position)
 
+            if (position == 4 ||  position == 5 || position == 6 ){
+                val selected = transportList[position]
+                val detailFragment = TransportationWebViewFragment()
+                val args = Bundle()
+                args.putString(
+                        "selectedStation",
+                        selected
+                )
 
-            val detailFragment = AttractionsDetailFragment()
-            val args = Bundle()
-            args.putInt(
-                    "selectedRow",
-                    position
-            )
-            args.putString("title", transportList[position])
+                detailFragment.arguments = args
 
-            detailFragment.arguments = args
+                val transaction = fragmentManager.beginTransaction()
+                transaction.replace(R.id.screenLayout, detailFragment).addToBackStack(null)
+                transaction.commit()
+            }
 
 
 
-            val transaction = fragmentManager.beginTransaction()
-            transaction.replace(R.id.screenLayout, detailFragment).addToBackStack(null)
-            transaction.commit()
+
 
 //           val intent = Intent(context, AttractionDetailActivity::class.java)
 //            intent.putExtra("sa", "ss")
@@ -86,7 +89,7 @@ class TransportFragment : Fragment(){
         private var  listOfTrasnport = ArrayList<String>()
         private var context: Context?=null
         constructor(context: Context, listOfAttractions: ArrayList<String>):super(){
-            this.listOfTrasnport=listOfTrasnport
+            this.listOfTrasnport=listOfAttractions
             this.context=context
         }
 
