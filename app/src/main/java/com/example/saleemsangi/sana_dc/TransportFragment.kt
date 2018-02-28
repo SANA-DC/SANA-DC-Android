@@ -71,6 +71,27 @@ class TransportFragment : Fragment(){
                 transaction.commit()
             }
 
+            else if (position == 0 ||  position == 1 || position == 2 ){
+                val detailFragment = AirportsFragment()
+                val args = Bundle()
+                args.putInt(
+                        "selectedAirportIndex",
+                        position
+                )
+
+                detailFragment.arguments = args
+
+                val transaction = fragmentManager.beginTransaction()
+                transaction.replace(R.id.screenLayout, detailFragment).addToBackStack(null)
+                transaction.commit()
+            }
+
+            else if (position == 4){
+                //parking
+            }
+            else{
+                //car rental
+            }
 
 
 
@@ -86,10 +107,10 @@ class TransportFragment : Fragment(){
     }
 
     inner class TransportAdaptor: BaseAdapter {
-        private var  listOfTrasnport = ArrayList<String>()
+        private var  listOfTransport = ArrayList<String>()
         private var context: Context?=null
         constructor(context: Context, listOfAttractions: ArrayList<String>):super(){
-            this.listOfTrasnport=listOfAttractions
+            this.listOfTransport=listOfAttractions
             this.context=context
         }
 
