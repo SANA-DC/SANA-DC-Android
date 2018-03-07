@@ -90,7 +90,11 @@ class TransportFragment : Fragment(){
                 //parking
             }
             else{
-                //car rental
+                val detailFragment = CarRentalFragment()
+
+                val transaction = fragmentManager.beginTransaction()
+                transaction.replace(R.id.screenLayout, detailFragment).addToBackStack(null)
+                transaction.commit()
             }
 
 
