@@ -58,7 +58,7 @@ class AgendaFragment : Fragment(){
             print(position)
 
 
-            val detailFragment = AttractionsDetailFragment()
+            val detailFragment = AgendaDetailFragment()
             val args = Bundle()
             args.putInt(
                     "selectedRow",
@@ -98,9 +98,10 @@ class AgendaFragment : Fragment(){
             val row = layoutInflator.inflate(R.layout.agenda_row, p2, false) //TODO: Crashes here
             val titleTextView = row.findViewById<TextView>(R.id.textViewAgendaTitle)
             titleTextView.text = attractionsList[p0]
-            textViewStartTime.text = "9:30pm"
-            textViewLocation.text "Room 34"
-            textViewTotalTime.text = "40 minutes"
+
+            row.findViewById<TextView>(R.id.textViewStartTime).text =  "9:30 pm"
+            row.findViewById<TextView>(R.id.textViewLocation).text = "Room 34"
+            row.findViewById<TextView>(R.id.textViewTotalTime).text = "40 min"
             return row
 
         }
