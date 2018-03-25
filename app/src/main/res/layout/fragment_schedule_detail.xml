@@ -10,27 +10,77 @@
 
 
     <TextView
-        android:id="@+id/textViewCarDetail"
+        android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="Hertz (Nearby)"
+        android:text="Sindh Development"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView9"
+    <ImageView
+        android:id="@+id/imageViewTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text= "1319 Rockville Pike \nRockville, Maryland 20852 \nPhone: +1-240-314-0640"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/textViewTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+        app:srcCompat="@android:drawable/ic_menu_recent_history" />
+
+    <TextView
+        android:id="@+id/textViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="10:00 am - 10:30 am"
         android:textColor="@android:color/white"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/textViewCarDetail"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCarDetail" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageViewTime"
+        app:layout_constraintTop_toTopOf="@+id/imageViewTime" />
+
+    <TextView
+        android:id="@+id/textViewDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wednesday, Sep 27"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/textViewTime"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTime" />
+
+    <ImageView
+        android:id="@+id/imageViewLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/imageViewTime"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewTime"
+        app:srcCompat="@android:drawable/ic_menu_mylocation" />
+
+    <TextView
+        android:id="@+id/textViewLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Town Center Assembly Hall"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textViewTime"
+        app:layout_constraintTop_toTopOf="@+id/imageViewLocation" />
+
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="gfdsgfdsghf hgfdsghf gdhs "
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textViewLocation"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLocation" />
 
 </android.support.constraint.ConstraintLayout>

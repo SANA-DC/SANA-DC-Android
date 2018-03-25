@@ -60,6 +60,7 @@ class AgendaFragment : Fragment(){
 
             val detailFragment = AgendaDetailFragment()
             val args = Bundle()
+
             args.putInt(
                     "selectedRow",
                     position
