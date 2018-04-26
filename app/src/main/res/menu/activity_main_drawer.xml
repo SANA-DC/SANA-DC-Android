@@ -28,7 +28,14 @@
             android:id="@+id/nav_attractions"
             android:icon="@drawable/ic_menu_camera"
             android:title="Attractions" />
-
+        <item
+            android:id="@+id/nav_halal_restaurants"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Halal Restaurants Near Hotel" />
+        <item
+            android:id="@+id/nav_sana_live"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="SANA Live" />
         <item
             android:id="@+id/nav_contactSANA"
             android:icon="@drawable/ic_menu_camera"

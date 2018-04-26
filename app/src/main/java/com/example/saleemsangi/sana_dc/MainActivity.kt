@@ -86,6 +86,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 ContactSanaFragment()
             }
 
+            R.id.nav_sana_live -> {
+                SANALiveFragment()
+            }
+
             else -> {
                 WelcomeFragment()
             }
