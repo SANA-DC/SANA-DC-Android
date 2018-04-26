@@ -82,6 +82,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 AboutMeFragment()
             }
 
+            R.id.nav_contactSANA -> {
+                ContactSanaFragment()
+            }
+
             else -> {
                 WelcomeFragment()
             }
