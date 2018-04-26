@@ -6,12 +6,11 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.BaseAdapter
 import android.widget.ListView
 import android.widget.TextView
 import kotlinx.android.synthetic.main.fragment_agenda.*
-import android.widget.AdapterView.OnItemClickListener
-import kotlinx.android.synthetic.main.agenda_row.*
 
 /**
  * Created by saleemsangi on 2/17/18.
@@ -23,7 +22,7 @@ class AgendaFragment : Fragment(){
 
     private var adapter : AttractionsAdaptor?=null
     private var attractionsList = arrayListOf(
-            "United States Holocaust Memorial Museum",
+            "Memebership and registration",
             "Strathmore",
             "Washington Monument",
             "Vietnam Veterans Memorial",

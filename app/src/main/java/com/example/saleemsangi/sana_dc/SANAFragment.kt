@@ -1,7 +1,6 @@
 package com.example.saleemsangi.sana_dc
 
 import android.graphics.Bitmap
-import android.opengl.Visibility
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -10,7 +9,6 @@ import android.view.ViewGroup
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import kotlinx.android.synthetic.main.fragment_hotel.*
 import kotlinx.android.synthetic.main.fragment_sana.*
 
 /**
@@ -57,7 +55,7 @@ class SANAFragment : Fragment(){
             }
         }
 
-        webViewSana.loadUrl("https://sanaonline.org/product/convention-registration-adult-member/")
+        webViewSana.loadUrl("https://sanaonline.org/conventions-archives/34th-convention-washington-d-c/")
 
     }
 }
