@@ -1,7 +1,6 @@
 package com.example.saleemsangi.sana_dc
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
@@ -61,12 +60,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 WelcomeFragment()
             }
 
-            R.id.nav_hotel -> {
-                Hotel()
+            R.id.nav_agenda ->{
+                AgendaFragment()
             }
 
             R.id.nav_sana -> {
                 SANAFragment()
+            }
+
+            R.id.nav_hotel -> {
+                Hotel()
             }
 
             R.id.nav_attractions -> {
@@ -75,9 +78,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_transportation -> {
                 TransportFragment()
             }
-            R.id.nav_agenda ->{
-                AgendaFragment()
-            }
+
             else -> {
                 WelcomeFragment()
             }

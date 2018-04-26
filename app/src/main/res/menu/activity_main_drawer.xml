@@ -8,13 +8,18 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Welcome" />
         <item
-            android:id="@+id/nav_hotel"
+            android:id="@+id/nav_agenda"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Hotel" />
+            android:title="Agenda" />
         <item
             android:id="@+id/nav_sana"
             android:icon="@drawable/ic_menu_camera"
             android:title="SANA" />
+        <item
+            android:id="@+id/nav_hotel"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Hotel" />
+
         <item
             android:id="@+id/nav_transportation"
             android:icon="@drawable/ic_menu_camera"
@@ -23,10 +28,7 @@
             android:id="@+id/nav_attractions"
             android:icon="@drawable/ic_menu_camera"
             android:title="Attractions" />
-        <item
-            android:id="@+id/nav_agenda"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Agenda" />
+
         <item
             android:id="@+id/nav_contactSANA"
             android:icon="@drawable/ic_menu_camera"
