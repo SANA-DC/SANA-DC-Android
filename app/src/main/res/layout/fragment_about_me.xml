@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/black">
+
+
+    <TextView
+        android:id="@+id/aboutMeTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="My name is Saleem Sangi and I'm a Mobile Developer whose works have been featured by Apple and various international publications. I've released apps in both iOS and Android and have happily been doing this for about 7 years. You can contact me at sangi.saleem@gmail.com"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+</LinearLayout>
