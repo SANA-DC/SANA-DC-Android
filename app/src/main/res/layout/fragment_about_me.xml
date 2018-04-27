@@ -16,6 +16,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:autoLink="all"
         android:text="My name is Saleem Sangi and I'm a Mobile Developer whose works have been featured by Apple and various international publications. I've released apps in both iOS and Android and have happily been doing this for about 7 years. You can contact me at sangi.saleem@gmail.com"
         android:textAlignment="textStart"
         android:textColor="@android:color/white"

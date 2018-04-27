@@ -21,21 +21,21 @@ class RestaurantsAdaptorRecyclerView : RecyclerView.Adapter<RestaurantsAdaptorRe
             "1.4 Miles",
             "The Halal Guys\n" +
                     "\n" +
-                    "891-A Rockville Pike, Rockville, MD 20852\n" +
+                    "891 Rockville Pike, \nRockville, MD 20852\n" +
                     "\n" +
                     "(301) 545-2988\n" +
                     "\n" +
                     "2.6 Miles",
             "Amina Thai Restaurant\n" +
                     "\n" +
-                    "5065 Nicholson Ln, Rockville, MD 20852\n" +
+                    "5065 Nicholson Lane, Rockville, \nMD 20852\n" +
                     "\n" +
                     "(301) 770-9509\n" +
                     "\n" +
                     "0.7 Miles",
             "Grill Kabob\n" +
                     "\n" +
-                    "7101 Democracy Blvd Ste 2367,\n" +
+                    "7101 Democracy Boulevard \n#2367,\n" +
                     "Bethesda, MD 20817\n" +
                     "\n" +
                     "(301) 365-3741\n" +
