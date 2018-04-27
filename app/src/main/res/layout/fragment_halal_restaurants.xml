@@ -4,13 +4,16 @@
     android:layout_height="match_parent"
     tools:context="com.example.saleemsangi.sana_dc.HalalRestaurantsFragment"
     android:orientation="vertical"
-    android:background="@android:color/black"
+    android:background="@android:color/white"
     >
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:divider="@android:color/white"
+        android:dividerHeight="4dp"
+        >
 
     </android.support.v7.widget.RecyclerView>
 

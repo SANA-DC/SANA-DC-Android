@@ -12,7 +12,47 @@ import android.widget.TextView
 
 class RestaurantsAdaptorRecyclerView : RecyclerView.Adapter<RestaurantsAdaptorRecyclerView.ViewHolder>() {
 
-    val dataToShow = arrayOf("sa", "sas", "sfd", "sasa")
+    val dataToShow = arrayOf("Toosso\n" +
+            "\n" +
+            "1596 Rockville Pike A, Rockville, MD 20852\n" +
+            "\n" +
+            "(301) 768-4645\n" +
+            "\n" +
+            "1.4 Miles",
+            "The Halal Guys\n" +
+                    "\n" +
+                    "891-A Rockville Pike, Rockville, MD 20852\n" +
+                    "\n" +
+                    "(301) 545-2988\n" +
+                    "\n" +
+                    "2.6 Miles",
+            "Amina Thai Restaurant\n" +
+                    "\n" +
+                    "5065 Nicholson Ln, Rockville, MD 20852\n" +
+                    "\n" +
+                    "(301) 770-9509\n" +
+                    "\n" +
+                    "0.7 Miles",
+            "Grill Kabob\n" +
+                    "\n" +
+                    "7101 Democracy Blvd Ste 2367,\n" +
+                    "Bethesda, MD 20817\n" +
+                    "\n" +
+                    "(301) 365-3741\n" +
+                    "\n" +
+                    "3.3 Miles",
+            "Yekta Kabobi Restaurant\n" +
+                    "\n" +
+                    "1488 Rockville Pike\n" +
+                    "Ste A\n" +
+                    "Rockville, MD 20852\n" +
+                    "\n" +
+                    "(301) 984-0005\n" +
+                    "\n" +
+                    "1.6 Miles")
+
+
+
 
     override fun getItemCount(): Int {
         return dataToShow.count()
@@ -33,8 +73,8 @@ class RestaurantsAdaptorRecyclerView : RecyclerView.Adapter<RestaurantsAdaptorRe
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(position: Int) {
-            val textTest = itemView.findViewById<TextView>(R.id.address)
-            textTest.text = "test"
+            val textTest = itemView.findViewById<TextView>(R.id.title)
+            textTest.text = dataToShow[position]
         }
     }
 

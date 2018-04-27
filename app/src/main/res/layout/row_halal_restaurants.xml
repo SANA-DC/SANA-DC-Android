@@ -16,32 +16,4 @@
         android:textSize="18sp"
         />
 
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text = "Address"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        />
-
-
-    <TextView
-        android:id="@+id/phoneNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text = "phone number"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        />
-
-    <TextView
-        android:id="@+id/distance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text = "distance"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        />
-
 </LinearLayout>
