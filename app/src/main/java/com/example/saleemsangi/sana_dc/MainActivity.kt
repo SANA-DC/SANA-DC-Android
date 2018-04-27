@@ -90,6 +90,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 SANALiveFragment()
             }
 
+            R.id.nav_halal_restaurants -> {
+                HalalRestaurantsFragment()
+            }
+
             else -> {
                 WelcomeFragment()
             }

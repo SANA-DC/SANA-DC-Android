@@ -20,5 +20,8 @@
     <string name="whiteHouseURL"> https://www.whitehouse.gov/ </string>
     <string name="nationalZooURL"> https://nationalzoo.si.edu/ </string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>
