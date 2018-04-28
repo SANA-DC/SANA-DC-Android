@@ -17,6 +17,7 @@
         android:text="SANA 2018"
         android:textColor="@android:color/white"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -29,8 +30,9 @@
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
         android:scrollbars="vertical"
-        android:text= "July 6th to 9th \n \n Location: Washington DC \n\n Welcome! This app is designed to \n help you navigate through a host of \n activities all specific to SANA 2018. \n\n -- Agenda \n\n -- SANA \n\n -- Transportation details \n\n -- Hotel \n\n -- SANA Live \n\n -- Attractions \n\n -- Halal Restaurants \n\n -- Contact SANA \n\n -- About Me \n\n Bethesda North Marriott Hotel \n and Conference Center \n\n 5701 Marinelli Road \n Rockville Maryland 20852 USA"
+        android:text="July 6th to 9th \n \n Location: Washington DC \n\n Welcome! This app is designed to \n help you navigate through a host of \n activities all specific to SANA 2018. \n\n -- Agenda \n\n -- SANA \n\n -- Transportation details \n\n -- Hotel \n\n -- SANA Live \n\n -- Attractions \n\n -- Halal Restaurants \n\n -- Contact SANA \n\n -- About Me \n\n Bethesda North Marriott Hotel \n and Conference Center \n\n 5701 Marinelli Road \n Rockville Maryland 20852 USA"
         android:textColor="@android:color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="@+id/textView6"
