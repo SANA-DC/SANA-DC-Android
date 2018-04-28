@@ -33,13 +33,13 @@
         android:text="Facebook" />
 
     <Button
-        android:id="@+id/InstBTN"
+        android:id="@+id/instBTN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Instagram" />
 
     <Button
-        android:id="@+id/TwitterBtn"
+        android:id="@+id/twitterBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Twitter" />
