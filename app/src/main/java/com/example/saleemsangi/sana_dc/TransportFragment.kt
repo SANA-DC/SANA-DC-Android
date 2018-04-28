@@ -6,11 +6,11 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.BaseAdapter
 import android.widget.ListView
 import android.widget.TextView
 import kotlinx.android.synthetic.main.fragment_transport.*
-import android.widget.AdapterView.OnItemClickListener
 
 /**
  * Created by saleemsangi on 2/17/18.
@@ -25,7 +25,7 @@ class TransportFragment : Fragment(){
             "Washington Dulles International Airport - IAD",
             "Ronald Reagan Washington National Airport - DCA",
             "Baltimore/Washington International Thurgood Marshall Airport - BWI",
-            "Parking",
+            "Parking - Free for first  150 vehicles, first come first served",
             "Bus Station",
             "Metro Station",
             "Train Station",
@@ -86,7 +86,7 @@ class TransportFragment : Fragment(){
                 transaction.commit()
             }
 
-            else if (position == 4){
+            else if (position == 3){
                 //parking
             }
             else{
