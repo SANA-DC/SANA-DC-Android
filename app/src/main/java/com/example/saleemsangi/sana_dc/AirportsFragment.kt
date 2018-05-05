@@ -1,13 +1,13 @@
 package com.example.saleemsangi.sana_dc
 
+//import com.google.android.gms.maps.model.LatLng
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-//import com.google.android.gms.maps.model.LatLng
 import kotlinx.android.synthetic.main.fragment_airport.*
+
 //import com.google.android.gms.maps.model.MarkerOptions
 
 
@@ -22,7 +22,9 @@ import kotlinx.android.synthetic.main.fragment_airport.*
  */
 
 
-class AirportsFragment : Fragment(){
+class AirportsFragment : Fragment() {
+
+
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater?.inflate(R.layout. fragment_airport, null)
@@ -60,7 +62,6 @@ class AirportsFragment : Fragment(){
         }
 
         activity.title = "Airport"
-
 
     }
 

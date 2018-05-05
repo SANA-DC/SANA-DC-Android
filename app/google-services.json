@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "48099574855",
+    "firebase_url": "https://sana-dc.firebaseio.com",
+    "project_id": "sana-dc",
+    "storage_bucket": "sana-dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:48099574855:android:4ba0e3add0385872",
+        "android_client_info": {
+          "package_name": "com.saleemsangi.sana_dc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "48099574855-udgotbjrk97eqtqb46ft5o2be5a1ci55.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.saleemsangi.sana_dc",
+            "certificate_hash": "01099fbf8ac977668add40367b503870f79acf8f"
+          }
+        },
+        {
+          "client_id": "48099574855-5c8anpe72f2culads6u32r0b004v8ma6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQwgJDHg0JDxb6NaLKxl9NfVGuDUb8dDs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "48099574855-5c8anpe72f2culads6u32r0b004v8ma6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "48099574855-1pjlmp7fu9dtunbdgtn2hgd20tqvs6mv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.saleem.SANA-DC"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
