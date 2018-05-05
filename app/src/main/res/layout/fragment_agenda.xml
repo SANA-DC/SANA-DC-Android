@@ -10,14 +10,15 @@
     >
 
 
-    <ListView
-        android:id="@+id/agendaListView"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyler_view_agenda"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:dividerHeight="1dp"
-        android:descendantFocusability="blocksDescendants"
         android:divider="@android:color/white"
+        android:descendantFocusability="blocksDescendants"
+        android:dividerHeight="4dp"
         />
+
 
 
 </LinearLayout>

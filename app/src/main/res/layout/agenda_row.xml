@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:padding="15dp"
     android:layout_height="match_parent"
     android:background="@android:color/black">
 
@@ -12,49 +13,55 @@
         android:id="@+id/textViewStartTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="16:00"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textViewTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:text="TextView"
-        android:textColor="?attr/colorButtonNormal"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textViewAgendaTitle" />
-
-    <TextView
-        android:id="@+id/textViewAgendaTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="Memebership Registration"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textViewStartTime"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewTotalTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="TextView"
+        android:text="to"
         android:textColor="@android:color/darker_gray"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/textViewStartTime"
         app:layout_constraintTop_toBottomOf="@+id/textViewStartTime" />
 
     <TextView
+        android:id="@+id/textViewEndTime"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginTop="8dp"
+        android:text="18:00"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/textViewStartTime"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTo" />
+
+    <TextView
+        android:id="@+id/textViewAgendaTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:text="Memebership Registration fjdsf jfkhsjdk fkjdshfkjsdhfkjsd fkjshdfkjsdhfkjsdhf kdsh"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintStart_toEndOf="@+id/textViewStartTime"
+        app:layout_constraintTop_toTopOf="@+id/textViewStartTime" />
+
+
+    <TextView
         android:id="@+id/textViewLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:text="TextView"
         android:textColor="@android:color/white"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textViewAgendaTitle"
         app:layout_constraintTop_toBottomOf="@+id/textViewAgendaTitle" />
 </android.support.constraint.ConstraintLayout>
