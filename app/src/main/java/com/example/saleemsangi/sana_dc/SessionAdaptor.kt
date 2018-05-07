@@ -31,6 +31,10 @@ class SessionAdaptorRecyclerView(val agenda:List<Session>) : RecyclerView.Adapte
 
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return 1
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent?.context)
         return ViewHolder(layoutInflater.inflate(R.layout.agenda_row, parent, false))

@@ -5,44 +5,44 @@
 
         <item
             android:id="@+id/nav_welcome"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/info"
             android:title="Welcome" />
         <item
             android:id="@+id/nav_agenda"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/schedule"
             android:title="Agenda" />
         <item
             android:id="@+id/nav_sana"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/icon_sana"
             android:title="SANA" />
         <item
             android:id="@+id/nav_hotel"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/skyscraper"
             android:title="Hotel" />
 
         <item
             android:id="@+id/nav_transportation"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/transportation"
             android:title="Transportation" />
         <item
             android:id="@+id/nav_attractions"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/attractions"
             android:title="Attractions" />
         <item
             android:id="@+id/nav_halal_restaurants"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/restaurant"
             android:title="Halal Restaurants Near Hotel" />
         <item
             android:id="@+id/nav_sana_live"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/live"
             android:title="SANA Live" />
         <item
             android:id="@+id/nav_contactSANA"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/contact_sana"
             android:title="Contact SANA" />
         <item
             android:id="@+id/nav_aboutme"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/about_me"
             android:title="About ME" />
 
 

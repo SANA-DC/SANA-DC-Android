@@ -6,7 +6,7 @@ package com.example.saleemsangi.sana_dc
 
 
 enum class RowType {
-    INFO,
+    SESSION_INFO,
     HEADER
 }
 
