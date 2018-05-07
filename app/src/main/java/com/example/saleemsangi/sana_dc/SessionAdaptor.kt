@@ -12,7 +12,7 @@ import android.widget.TextView
 
 
 //class SessionAdaptor
-
+//Change from session to agenda row
 class SessionAdaptorRecyclerView(val agenda:List<Session>) : RecyclerView.Adapter<SessionAdaptorRecyclerView.ViewHolder>() {
 
 
@@ -24,26 +24,26 @@ class SessionAdaptorRecyclerView(val agenda:List<Session>) : RecyclerView.Adapte
         //val show = dataToShow.get(position)
         //holder.bind(agenda.)
 
-        val session = agenda?.get(position)
-        session?.let {
-            holder?.bind(session)
+        val session:Session = agenda.get(position)//.session
+        session.let {
+            holder.bind(session!!)
         }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent?.context)
-
         return ViewHolder(layoutInflater.inflate(R.layout.agenda_row, parent, false))
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(session: Session) {
-            itemView.findViewById<TextView>(R.id.textViewAgendaTitle).text = session.title
+            itemView.findViewById<TextView>(R.id.textViewAgendaTitle).text = session.session
             itemView.findViewById<TextView>(R.id.textViewStartTime).text = session.startTime
             itemView.findViewById<TextView>(R.id.textViewEndTime).text = session.endTime
-            itemView.findViewById<TextView>(R.id.textViewLocation).text = session.location
+            val room = session.room
+            itemView.findViewById<TextView>(R.id.textViewLocation).text = "Room : $room"
 
         }
     }
