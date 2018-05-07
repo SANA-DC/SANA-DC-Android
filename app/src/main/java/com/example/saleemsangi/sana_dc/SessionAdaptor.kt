@@ -13,7 +13,7 @@ import android.widget.TextView
 
 //class SessionAdaptor
 //Change from session to agenda row
-class SessionAdaptorRecyclerView(val agenda:List<Session>) : RecyclerView.Adapter<SessionAdaptorRecyclerView.ViewHolder>() {
+class SessionAdaptorRecyclerView(val agenda:MutableList<AgendaRow>) : RecyclerView.Adapter<SessionAdaptorRecyclerView.ViewHolder>() {
 
 
     override fun getItemCount(): Int {
@@ -24,20 +24,39 @@ class SessionAdaptorRecyclerView(val agenda:List<Session>) : RecyclerView.Adapte
         //val show = dataToShow.get(position)
         //holder.bind(agenda.)
 
-        val session:Session = agenda.get(position)//.session
-        session.let {
-            holder.bind(session!!)
+        if (agenda[position].type == RowType.SESSION_INFO)
+        {
+            val session:Session = agenda[position].session!!
+            session.let {
+                holder.bind(session!!)
+            }
+        } else {
+            val title = agenda[position].headerTitle
+            holder.bindHeader(title!!)
         }
+
 
     }
 
     override fun getItemViewType(position: Int): Int {
-        return 1
+        if (agenda[position].type == RowType.SESSION_INFO){
+            return return 0
+        } else {
+            return 1
+
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent?.context)
-        return ViewHolder(layoutInflater.inflate(R.layout.agenda_row, parent, false))
+        if (viewType == RowType.SESSION_INFO.ordinal)
+        {
+            return ViewHolder(layoutInflater.inflate(R.layout.agenda_row, parent, false))
+
+        } else {
+            return ViewHolder(layoutInflater.inflate(R.layout.agenda_header, parent, false))
+
+        }
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -49,6 +68,10 @@ class SessionAdaptorRecyclerView(val agenda:List<Session>) : RecyclerView.Adapte
             val room = session.room
             itemView.findViewById<TextView>(R.id.textViewLocation).text = "Room : $room"
 
+        }
+
+        fun bindHeader(title:String){
+            itemView.findViewById<TextView>(R.id.header_title).text = title
         }
     }
 

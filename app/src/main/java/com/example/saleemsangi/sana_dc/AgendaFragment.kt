@@ -42,13 +42,18 @@ class AgendaFragment : Fragment(){
 
     //var ref: DatabaseReference? = null
 
-    var scheduleList : MutableList<Session>? = null
+    var day1List : MutableList<Session>? = null
+    var day2List : MutableList<Session>? = null
+    var day3List : MutableList<Session>? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        scheduleList = mutableListOf()
+        day1List = mutableListOf()
+        day2List = mutableListOf()
+        day3List = mutableListOf()
+
 
     }
 
@@ -99,12 +104,49 @@ class AgendaFragment : Fragment(){
 //
 //                    }
 
-                    var days = p0.child("Day1")
-                    for (session in days.children){
+                    var scheduleList : MutableList<AgendaRow> = mutableListOf()
+
+
+                    var day1 = p0.child("Day1")
+                    var day2 = p0.child("Day2")
+                    var day3 = p0.child("Day3")
+
+                    val headerOne = AgendaRow(RowType.HEADER, null, "FRIDAY, JULY 6")
+                    scheduleList!!.add(headerOne)
+
+                    for (session in day1.children){
                         val session = session.getValue(Session::class.java)
-                        scheduleList?.add(session!!)
+                        //day1List?.add(session!!)
+
+                        val agendaRow = AgendaRow(RowType.SESSION_INFO, session, null)
+                        scheduleList!!.add(agendaRow)
                     }
+                    val headerTwo = AgendaRow(RowType.HEADER, null, "SATURDAY, JULY 7")
+                    scheduleList!!.add(headerTwo)
+
+                    for (session in day2.children){
+                        val session = session.getValue(Session::class.java)
+
+                        val agendaRow = AgendaRow(RowType.SESSION_INFO, session, null)
+                        scheduleList!!.add(agendaRow)
+
+                        //day2List?.add(session!!)
+
+                    }
+
+                    val headerThree = AgendaRow(RowType.HEADER, null, "SUNDAY, JULY 8")
+                    scheduleList!!.add(headerThree)
+
+                    for (session in day3.children){
+                        val session = session.getValue(Session::class.java)
+                        val agendaRow = AgendaRow(RowType.SESSION_INFO, session, null)
+                        scheduleList!!.add(agendaRow)
+                    }
+
+
+
                     progressBarAgenda.visibility = View.INVISIBLE
+                   // Log.d("seize of array", "= ${scheduleList!!.size}")
                     recyclerView?.adapter = SessionAdaptorRecyclerView(scheduleList!!)
 
                 } else {
