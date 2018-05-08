@@ -1,5 +1,6 @@
 package com.example.saleemsangi.sana_dc
 
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
@@ -73,15 +74,12 @@ class AgendaFragment : Fragment(){
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recyclerView = view?.findViewById<RecyclerView>(R.id.recyler_view_agenda)
-        recyclerView?.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
 
-        recyclerView?.layoutManager = LinearLayoutManager(context)
-        recyclerView?.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
 
         // recyclerView?.adapter = SessionAdaptorRecyclerView(attractionsList)
 
 //
+
         val ref = FirebaseDatabase.getInstance().reference
         ref!!.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError?) {
@@ -112,42 +110,49 @@ class AgendaFragment : Fragment(){
                     var day3 = p0.child("Day3")
 
                     val headerOne = AgendaRow(RowType.HEADER, null, "FRIDAY, JULY 6")
-                    scheduleList!!.add(headerOne)
+                    scheduleList.add(headerOne)
 
                     for (session in day1.children){
-                        val session = session.getValue(Session::class.java)
+                        val sessionClass = session.getValue(Session::class.java)
                         //day1List?.add(session!!)
 
-                        val agendaRow = AgendaRow(RowType.SESSION_INFO, session, null)
-                        scheduleList!!.add(agendaRow)
+                        val agendaRow = AgendaRow(RowType.SESSION_INFO, sessionClass, null)
+                        scheduleList.add(agendaRow)
                     }
                     val headerTwo = AgendaRow(RowType.HEADER, null, "SATURDAY, JULY 7")
-                    scheduleList!!.add(headerTwo)
+                    scheduleList.add(headerTwo)
 
                     for (session in day2.children){
-                        val session = session.getValue(Session::class.java)
+                        val sessionClass = session.getValue(Session::class.java)
 
-                        val agendaRow = AgendaRow(RowType.SESSION_INFO, session, null)
-                        scheduleList!!.add(agendaRow)
+                        val agendaRow = AgendaRow(RowType.SESSION_INFO, sessionClass, null)
+                        scheduleList.add(agendaRow)
 
                         //day2List?.add(session!!)
 
                     }
 
                     val headerThree = AgendaRow(RowType.HEADER, null, "SUNDAY, JULY 8")
-                    scheduleList!!.add(headerThree)
+                    scheduleList.add(headerThree)
 
                     for (session in day3.children){
-                        val session = session.getValue(Session::class.java)
-                        val agendaRow = AgendaRow(RowType.SESSION_INFO, session, null)
-                        scheduleList!!.add(agendaRow)
+                        val sessionClass = session.getValue(Session::class.java)
+                        val agendaRow = AgendaRow(RowType.SESSION_INFO, sessionClass, null)
+                        scheduleList.add(agendaRow)
                     }
 
 
 
                     progressBarAgenda.visibility = View.INVISIBLE
                    // Log.d("seize of array", "= ${scheduleList!!.size}")
-                    recyclerView?.adapter = SessionAdaptorRecyclerView(scheduleList!!)
+                    val recyclerView = view?.findViewById<RecyclerView>(R.id.recyler_view_agenda)
+                    recyclerView?.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+
+                    recyclerView?.layoutManager = LinearLayoutManager(context)
+                    recyclerView?.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+                    recyclerView?.adapter = SessionAdaptorRecyclerView(scheduleList)
+                    view?.setBackgroundColor(Color.WHITE)
+
 
                 } else {
                     Log.d("firebase", "no data")
