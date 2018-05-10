@@ -79,6 +79,11 @@ class AgendaFragment : Fragment(){
         // recyclerView?.adapter = SessionAdaptorRecyclerView(attractionsList)
 
 //
+        val recyclerView = view?.findViewById<RecyclerView>(R.id.recyler_view_agenda)
+        recyclerView?.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+
+        recyclerView?.layoutManager = LinearLayoutManager(context)
+        recyclerView?.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
 
         val ref = FirebaseDatabase.getInstance().reference
         ref!!.addValueEventListener(object : ValueEventListener {
@@ -145,11 +150,7 @@ class AgendaFragment : Fragment(){
 
                     progressBarAgenda.visibility = View.INVISIBLE
                    // Log.d("seize of array", "= ${scheduleList!!.size}")
-                    val recyclerView = view?.findViewById<RecyclerView>(R.id.recyler_view_agenda)
-                    recyclerView?.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
 
-                    recyclerView?.layoutManager = LinearLayoutManager(context)
-                    recyclerView?.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
                     recyclerView?.adapter = SessionAdaptorRecyclerView(scheduleList)
                     view?.setBackgroundColor(Color.WHITE)
 
