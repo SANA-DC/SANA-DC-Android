@@ -26,7 +26,7 @@
         android:id="@+id/imageViewTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="@+id/textViewTitle"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
         app:srcCompat="@android:drawable/ic_menu_recent_history" />
@@ -38,6 +38,7 @@
         android:layout_marginStart="16dp"
         android:text="10:00 am - 10:30 am"
         android:textColor="@android:color/white"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageViewTime"
         app:layout_constraintTop_toTopOf="@+id/imageViewTime" />
@@ -48,7 +49,7 @@
         android:layout_height="wrap_content"
         android:text="Wednesday, Sep 27"
         android:textColor="@android:color/darker_gray"
-        android:textSize="10sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/textViewTime"
         app:layout_constraintTop_toBottomOf="@+id/textViewTime" />
 
@@ -56,18 +57,19 @@
         android:id="@+id/imageViewLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="@+id/imageViewTime"
         app:layout_constraintTop_toBottomOf="@+id/imageViewTime"
         app:srcCompat="@android:drawable/ic_menu_mylocation" />
 
     <TextView
-        android:id="@+id/textViewLocation"
+        android:id="@+id/textViewLocationDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:text="Town Center Assembly Hall"
         android:textColor="@android:color/white"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textViewTime"
         app:layout_constraintTop_toTopOf="@+id/imageViewLocation" />
@@ -76,11 +78,13 @@
         android:id="@+id/textViewDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="24dp"
-        android:text="gfdsgfdsghf hgfdsghf gdhs "
         android:textColor="@android:color/white"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textViewLocation"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLocation" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textViewLocationDetail"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLocationDetail" />
 
 </android.support.constraint.ConstraintLayout>

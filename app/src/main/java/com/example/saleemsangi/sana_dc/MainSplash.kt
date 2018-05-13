@@ -11,10 +11,6 @@ class MainSplash : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        //Picasso.get().load(R.drawable.).into(splash_image)
-
-
-
 
         val background = object : Thread(){
             override fun run() {

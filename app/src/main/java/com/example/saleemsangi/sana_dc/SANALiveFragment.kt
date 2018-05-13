@@ -62,7 +62,7 @@ class SANALiveFragment : Fragment(){
             }
         }
 
-        webViewSanaLive.loadUrl("https://sanaonline.org/sanalive")
+        webViewSanaLive.loadUrl("https://sanaonline.org/live")
 
     }
 }

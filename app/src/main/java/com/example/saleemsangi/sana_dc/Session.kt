@@ -11,7 +11,7 @@ enum class RowType {
 }
 
 
-data class AgendaRow(var type: RowType, var session: Session?, var headerTitle: String?)
+data class AgendaRow(var type: RowType, var session: Session?, var headerTitle: String?, var day:String?)
 
 
 data class Session(val startTime:String, val endTime:String, val session:String, val room:String, val featuring:String, val lead:String, val category:String){

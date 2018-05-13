@@ -74,11 +74,6 @@ class AgendaFragment : Fragment(){
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
-        // recyclerView?.adapter = SessionAdaptorRecyclerView(attractionsList)
-
-//
         val recyclerView = view?.findViewById<RecyclerView>(R.id.recyler_view_agenda)
         recyclerView?.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
 
@@ -86,10 +81,9 @@ class AgendaFragment : Fragment(){
         recyclerView?.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
 
         val ref = FirebaseDatabase.getInstance().reference
-        ref!!.addValueEventListener(object : ValueEventListener {
+        ref.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError?) {
                 Log.d("firebase", "cancelled")
-
             }
 
             override fun onDataChange(p0: DataSnapshot?) {
@@ -114,35 +108,35 @@ class AgendaFragment : Fragment(){
                     var day2 = p0.child("Day2")
                     var day3 = p0.child("Day3")
 
-                    val headerOne = AgendaRow(RowType.HEADER, null, "FRIDAY, JULY 6")
+                    val headerOne = AgendaRow(RowType.HEADER, null, "FRIDAY, JULY 6", null)
                     scheduleList.add(headerOne)
 
                     for (session in day1.children){
                         val sessionClass = session.getValue(Session::class.java)
                         //day1List?.add(session!!)
 
-                        val agendaRow = AgendaRow(RowType.SESSION_INFO, sessionClass, null)
+                        val agendaRow = AgendaRow(RowType.SESSION_INFO, sessionClass, null, "FRIDAY, JULY 6")
                         scheduleList.add(agendaRow)
                     }
-                    val headerTwo = AgendaRow(RowType.HEADER, null, "SATURDAY, JULY 7")
+                    val headerTwo = AgendaRow(RowType.HEADER, null, "SATURDAY, JULY 7", null)
                     scheduleList.add(headerTwo)
 
                     for (session in day2.children){
                         val sessionClass = session.getValue(Session::class.java)
 
-                        val agendaRow = AgendaRow(RowType.SESSION_INFO, sessionClass, null)
+                        val agendaRow = AgendaRow(RowType.SESSION_INFO, sessionClass, null, "SATURDAY, JULY 7")
                         scheduleList.add(agendaRow)
 
                         //day2List?.add(session!!)
 
                     }
 
-                    val headerThree = AgendaRow(RowType.HEADER, null, "SUNDAY, JULY 8")
+                    val headerThree = AgendaRow(RowType.HEADER, null, "SUNDAY, JULY 8", null)
                     scheduleList.add(headerThree)
 
                     for (session in day3.children){
                         val sessionClass = session.getValue(Session::class.java)
-                        val agendaRow = AgendaRow(RowType.SESSION_INFO, sessionClass, null)
+                        val agendaRow = AgendaRow(RowType.SESSION_INFO, sessionClass, null, "SUNDAY, JULY 8")
                         scheduleList.add(agendaRow)
                     }
 
@@ -151,7 +145,41 @@ class AgendaFragment : Fragment(){
                     progressBarAgenda.visibility = View.INVISIBLE
                    // Log.d("seize of array", "= ${scheduleList!!.size}")
 
-                    recyclerView?.adapter = SessionAdaptorRecyclerView(scheduleList)
+                    //recyclerView?.adapter = SessionAdaptorRecyclerView(scheduleList)
+                    recyclerView?.adapter = SessionAdaptorRecyclerView(scheduleList){ session:Session, day:String ->
+
+                       // val args = Bundle()
+
+//                        args.putInt(
+//                                "session",
+//                                session
+//                        )
+
+                        //args.putParcelable("session", session)
+
+
+//Session(val startTime:String, val endTime:String, val session:String, val room:String, val featuring:String, val lead:String, val category:String)
+
+//                        args.putString("title", session.session)
+//                        args.putString("startTime", session.startTime)
+//                        args.putString("endTime", session.endTime)
+//                        args.putString("room", session.room)
+//                        args.putString("category", session.category)
+//                        //args.putString("speaker", session.featuring)
+//
+//                        detailFragment.arguments = args
+
+                        val singleton = Singleton.instance
+                        singleton.session = session
+                        singleton.day = day
+
+                        val detailFragment = AgendaDetailFragment()
+                        val transaction = fragmentManager.beginTransaction()
+                        transaction.replace(R.id.screenLayout, detailFragment).addToBackStack(null)
+                        transaction.commit()
+
+
+                    }
                     view?.setBackgroundColor(Color.WHITE)
 
 

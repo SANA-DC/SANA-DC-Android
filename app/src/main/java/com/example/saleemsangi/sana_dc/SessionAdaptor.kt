@@ -13,7 +13,7 @@ import android.widget.TextView
 
 //class SessionAdaptor
 //Change from session to agenda row
-class SessionAdaptorRecyclerView(val agenda:MutableList<AgendaRow>) : RecyclerView.Adapter<SessionAdaptorRecyclerView.ViewHolder>() {
+class SessionAdaptorRecyclerView(val agenda:MutableList<AgendaRow>, val clickListener: (session:Session, day:String) -> Unit) : RecyclerView.Adapter<SessionAdaptorRecyclerView.ViewHolder>() {
 
 
     override fun getItemCount(): Int {
@@ -28,7 +28,7 @@ class SessionAdaptorRecyclerView(val agenda:MutableList<AgendaRow>) : RecyclerVi
         {
             val session:Session = agenda[position].session!!
             session.let {
-                holder.bind(session!!)
+                holder.bind(session!!, agenda[position].day!!)
             }
         } else {
             val title = agenda[position].headerTitle
@@ -61,12 +61,13 @@ class SessionAdaptorRecyclerView(val agenda:MutableList<AgendaRow>) : RecyclerVi
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(session: Session) {
+        fun bind(session: Session, day:String) {
             itemView.findViewById<TextView>(R.id.textViewAgendaTitle).text = session.session
             itemView.findViewById<TextView>(R.id.textViewStartTime).text = session.startTime
             itemView.findViewById<TextView>(R.id.textViewEndTime).text = session.endTime
             val room = session.room
             itemView.findViewById<TextView>(R.id.textViewLocation).text = "Room : $room"
+            itemView.setOnClickListener{clickListener(session, day)}
 
         }
 
