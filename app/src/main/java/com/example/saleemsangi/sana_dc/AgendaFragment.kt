@@ -79,6 +79,7 @@ class AgendaFragment : Fragment(){
 
         recyclerView?.layoutManager = LinearLayoutManager(context)
         recyclerView?.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+        
 
         val ref = FirebaseDatabase.getInstance().reference
         ref.addValueEventListener(object : ValueEventListener {
@@ -142,7 +143,7 @@ class AgendaFragment : Fragment(){
 
 
 
-                    progressBarAgenda.visibility = View.INVISIBLE
+                    progressBarAgenda?.visibility = View.INVISIBLE
                    // Log.d("seize of array", "= ${scheduleList!!.size}")
 
                     //recyclerView?.adapter = SessionAdaptorRecyclerView(scheduleList)
