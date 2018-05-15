@@ -42,7 +42,7 @@ class TransportFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
 
-        activity.title = "Transport"
+        activity.title = "Transportation"
 
         adapter = TransportAdaptor(
                context,
