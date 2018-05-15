@@ -17,7 +17,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:autoLink="all"
-        android:text="My name is Saleem Sangi and I'm a Mobile Developer whose works have been featured by Apple and various international publications. I've released apps in both iOS and Android and have happily been doing this for about 7 years. You can contact me at sangi.saleem@gmail.com"
+        android:text="My name is Saleem Sangi and I am an experienced Mobile Application Developer. My projects have been featured by Apple and various international publications. \n\nI’ve released apps in both iOS and Android and have been happily doing this for about 7 years. \n\nI also develop apps for small businesses, you can contact me at sangi.saleem@gmail.com"
         android:textAlignment="textStart"
         android:textColor="@android:color/white"
         android:textSize="18sp" />

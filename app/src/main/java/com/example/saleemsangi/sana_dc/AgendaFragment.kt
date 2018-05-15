@@ -79,9 +79,22 @@ class AgendaFragment : Fragment(){
 
         recyclerView?.layoutManager = LinearLayoutManager(context)
         recyclerView?.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
-        
+
 
         val ref = FirebaseDatabase.getInstance().reference
+
+        ref.addListenerForSingleValueEvent(object:ValueEventListener{
+            override fun onCancelled(p0: DatabaseError?) {
+                Log.d("firebase", "cancelled")
+            }
+
+            override fun onDataChange(p0: DataSnapshot?) {
+                Log.d("firebase", "cancelled")
+            }
+
+        })
+
+
         ref.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError?) {
                 Log.d("firebase", "cancelled")
@@ -90,7 +103,9 @@ class AgendaFragment : Fragment(){
             override fun onDataChange(p0: DataSnapshot?) {
 
                 if (p0!!.exists()){
-                  //  Log.d("firebase", "date = ${p0.child("Day1")}")
+                    Log.d("firebase", "exists")
+
+                    //  Log.d("firebase", "date = ${p0.child("Day1")}")
 
                    // val day1:List<Session> = p0.child("Day1")
 //                    for (days1 in p0.children){
