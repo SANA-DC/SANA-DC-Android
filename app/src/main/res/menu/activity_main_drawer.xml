@@ -16,6 +16,10 @@
             android:icon="@drawable/icon_sana"
             android:title="SANA" />
         <item
+            android:id="@+id/nav_syna"
+            android:icon="@drawable/user_groups"
+            android:title="SYNA" />
+        <item
             android:id="@+id/nav_hotel"
             android:icon="@drawable/skyscraper"
             android:title="Hotel" />

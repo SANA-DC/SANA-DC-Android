@@ -94,6 +94,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 HalalRestaurantsFragment()
             }
 
+            R.id.nav_syna -> {
+                SYNAFragment()
+            }
+
             else -> {
                 WelcomeFragment()
             }
