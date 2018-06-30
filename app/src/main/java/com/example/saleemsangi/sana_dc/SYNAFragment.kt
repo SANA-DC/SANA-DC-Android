@@ -58,6 +58,11 @@ class SYNAFragment : Fragment(){
 
             } else if (position == 1) {
 
+                val detailFragment = SYNAVotingFragment()
+                val transaction = fragmentManager.beginTransaction()
+                transaction.replace(R.id.screenLayout, detailFragment).addToBackStack(null)
+                transaction.commit()
+
             }
 
         }
