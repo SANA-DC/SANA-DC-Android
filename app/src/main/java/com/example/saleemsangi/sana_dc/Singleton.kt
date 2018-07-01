@@ -14,4 +14,6 @@ public class Singleton private constructor() {
     }
     var session:Session? = null
     var day:String? = null
+    var SYNADescription:String? = null
+
 }

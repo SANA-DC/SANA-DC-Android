@@ -47,7 +47,10 @@ class AgendaDetailFragment : Fragment(){
         val category = session?.category
         if (category == "Speaker Session"){
             textViewDescription.text = session?.featuring
-        } else {
+        } else if (category == "SYNA" && Singleton.instance.SYNADescription != null){
+            textViewDescription.text = Singleton.instance.SYNADescription
+        }
+        else {
             textViewDescription.visibility = View.INVISIBLE
         }
 
