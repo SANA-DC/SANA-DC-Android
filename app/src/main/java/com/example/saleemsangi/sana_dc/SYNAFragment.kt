@@ -24,7 +24,7 @@ class SYNAFragment : Fragment(){
     private var synaList = arrayListOf(
             "Schedule",
             "Voting",
-            "Places to Eat",
+            //"Places to Eat",
             "Contact Info"
     )
 
@@ -66,7 +66,7 @@ class SYNAFragment : Fragment(){
                 transaction.commit()
 
             }
-            else if (position == 2) {
+            else {
 
                 val detailFragment = ContactSYNAInfoFragment()
                 val transaction = fragmentManager.beginTransaction()
@@ -74,14 +74,14 @@ class SYNAFragment : Fragment(){
                 transaction.commit()
 
             }
-            else if (position == 3) {
-
-                val detailFragment = ContactSYNAInfoFragment()
-                val transaction = fragmentManager.beginTransaction()
-                transaction.replace(R.id.screenLayout, detailFragment).addToBackStack(null)
-                transaction.commit()
-
-            }
+//            else if (position == 3) {
+//
+//                val detailFragment = ContactSYNAInfoFragment()
+//                val transaction = fragmentManager.beginTransaction()
+//                transaction.replace(R.id.screenLayout, detailFragment).addToBackStack(null)
+//                transaction.commit()
+//
+//            }
 
         }
 

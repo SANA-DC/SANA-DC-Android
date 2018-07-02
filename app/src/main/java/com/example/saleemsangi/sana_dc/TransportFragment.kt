@@ -26,6 +26,7 @@ class TransportFragment : Fragment(){
             "Ronald Reagan Washington National Airport - DCA",
             "Baltimore/Washington International Thurgood Marshall Airport - BWI",
             "Parking - Free for first  150 vehicles, first come first served",
+            "Metro Map",
             "Bus Station",
             "Metro Station",
             "Train Station",
@@ -55,7 +56,7 @@ class TransportFragment : Fragment(){
            // Toast.makeText(context, "hello " + position, Toast.LENGTH_LONG).show()
             print(position)
 
-            if (position == 4 ||  position == 5 || position == 6 ){
+            if (position == 5 ||  position == 6 || position == 7 ){
                 val selected = transportList[position]
                 val detailFragment = TransportationWebViewFragment()
                 val args = Bundle()
@@ -88,6 +89,12 @@ class TransportFragment : Fragment(){
 
             else if (position == 3){
                 //parking
+            }
+            else if (position == 4){
+                val detailFragment = MetroMapFragment()
+                val transaction = fragmentManager.beginTransaction()
+                transaction.replace(R.id.screenLayout, detailFragment).addToBackStack(null)
+                transaction.commit()
             }
             else{
                 val detailFragment = CarRentalFragment()
