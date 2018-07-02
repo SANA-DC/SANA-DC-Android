@@ -61,6 +61,8 @@ class SYNAAgendaFragment : Fragment(){
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        scheduleList.removeAll { true }
+
         val recyclerView = view?.findViewById<RecyclerView>(R.id.recyler_view_agenda_syna)
         recyclerView?.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
 
@@ -112,6 +114,7 @@ class SYNAAgendaFragment : Fragment(){
         val session3Day3 = Session("10 pm", "Midnight", "Masquerade Ball - Dessert Banquet!", "White Oak", "", "", "SYNA")
         val agendaRow3Day3 = AgendaRow(RowType.SESSION_INFO, session3Day3, null, "SUNDAY, JULY 8")
         scheduleList.add(agendaRow3Day3)
+
 
         recyclerView?.adapter = SessionAdaptorRecyclerView(scheduleList) { session: Session, day: String ->
 
